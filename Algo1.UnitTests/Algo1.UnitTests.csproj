@@ -55,6 +55,7 @@
     <Compile Include="MergeSorterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BubbleSorterTests.cs" />
+    <Compile Include="QuickSortTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Algo1.Core\Algo1.Core.csproj">
