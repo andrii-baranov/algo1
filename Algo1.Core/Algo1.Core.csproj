@@ -42,6 +42,7 @@
     <Compile Include="BubbleSorter.cs" />
     <Compile Include="ISorter.cs" />
     <Compile Include="MergeSorter.cs" />
+    <Compile Include="PivotSelectionType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuickSort.cs" />
   </ItemGroup>
