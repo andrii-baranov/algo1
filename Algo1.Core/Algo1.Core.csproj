@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DijkstraPathSearch.cs" />
+    <Compile Include="Heap.cs" />
     <Compile Include="KargerMinCut.cs" />
     <Compile Include="Sorting\BubbleSorter.cs" />
     <Compile Include="Sorting\ISorter.cs" />
