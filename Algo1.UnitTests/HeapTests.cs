@@ -10,7 +10,7 @@ namespace Algo1.UnitTests
         [TestMethod]
         public void HeapifyEmptyArray()
         {
-            Heap heap = new Heap(isMinHeap:true);
+            var heap = new Heap<int>(isMinHeap:true);
 
             heap.Heapify(new int[0] { });
 
@@ -21,7 +21,7 @@ namespace Algo1.UnitTests
         [TestMethod]
         public void HeapifySingleElement()
         {
-            Heap heap = new Heap(isMinHeap: true);
+            var heap = new Heap<int>(isMinHeap: true);
 
             heap.Heapify(new int[1] { 10 });
 
@@ -32,7 +32,7 @@ namespace Algo1.UnitTests
         [TestMethod]
         public void HeapifyTwoElements()
         {
-            Heap heap = new Heap(isMinHeap: true);
+            var heap = new Heap<int>(isMinHeap: true);
 
             heap.Heapify(new int[2] { 2, 4 });
 
@@ -43,7 +43,7 @@ namespace Algo1.UnitTests
         [TestMethod]
         public void HeapifyTwoElementsInverseOrder()
         {
-            Heap heap = new Heap(isMinHeap: true);
+            var heap = new Heap<int>(isMinHeap: true);
 
             heap.Heapify(new int[2] { 4, 2 });
 
@@ -54,7 +54,7 @@ namespace Algo1.UnitTests
         [TestMethod]
         public void HeapifyThreeElements()
         {
-            Heap heap = new Heap(isMinHeap: true);
+            var heap = new Heap<int>(isMinHeap: true);
 
             heap.Heapify(new int[3] { 6, 1, 4 });
 
@@ -66,7 +66,7 @@ namespace Algo1.UnitTests
         [TestMethod]
         public void Heapify6Elements()
         {
-            Heap heap = new Heap(isMinHeap: true);
+            var heap = new Heap<int>(isMinHeap: true);
 
             heap.Heapify(new int[6] { 6, 1, 4, 5, 2,3 });
 
@@ -77,7 +77,7 @@ namespace Algo1.UnitTests
         [TestMethod]
         public void Heapify6ElementsWithDuplicates()
         {
-            Heap heap = new Heap(isMinHeap: true);
+            var heap = new Heap<int>(isMinHeap: true);
 
             heap.Heapify(new int[6] { 3, 5, 4, 5, 2, 3 });
 
@@ -88,7 +88,7 @@ namespace Algo1.UnitTests
         [TestMethod]
         public void HeapifyAndExtract()
         {
-            Heap heap = new Heap(isMinHeap: true);
+            var heap = new Heap<int>(isMinHeap: true);
 
             heap.Heapify(new int[6] { 3, 5, 4, 5, 1, 3 });
 
@@ -103,7 +103,7 @@ namespace Algo1.UnitTests
         [TestMethod]
         public void HeapifyAndExtract5Elements()
         {
-            Heap heap = new Heap(isMinHeap: true);
+            var heap = new Heap<int>(isMinHeap: true);
 
             heap.Heapify(new int[5] { 3, 5, 4, 2, 1 });
 
@@ -117,7 +117,7 @@ namespace Algo1.UnitTests
         [TestMethod]
         public void HeapifyAndExtract8Elements()
         {
-            Heap heap = new Heap(isMinHeap: true);
+            var heap = new Heap<int>(isMinHeap: true);
 
             heap.Heapify(new int[8] { 7,6, 3, 5, 4, 2, 1, 8 });
 
@@ -132,7 +132,7 @@ namespace Algo1.UnitTests
         [TestMethod]
         public void InsertExtract4Elements()
         {
-            Heap heap = new Heap(isMinHeap: true);
+            var heap = new Heap<int>(isMinHeap: true);
 
             for (int i = 1; i <= 4; i++)
             {

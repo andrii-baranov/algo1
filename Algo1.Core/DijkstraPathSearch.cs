@@ -27,16 +27,15 @@ namespace Algo1.Core
 
             startNode.CurrentCost = 0;
 
-            List<AdjacencyItem> nodesToVisit = new List<AdjacencyItem>();
+            //  List<AdjacencyItem> nodesToVisit = new List<AdjacencyItem>();
+            Heap<AdjacencyItem> nodesToVisit = new Heap<AdjacencyItem>(isMinHeap:true);
 
-            nodesToVisit.Add(startNode);
+            nodesToVisit.Insert(startNode);
 
-            while (nodesToVisit.Count > 0)
+            while (nodesToVisit.HasItems())
             {
                 //todo ugly fix, change with heap structure to enable ordered storage
-                nodesToVisit = nodesToVisit.OrderBy(i => i.CurrentCost).ToList();
-                var currentNode = nodesToVisit[0];
-                nodesToVisit.RemoveAt(0);
+                var currentNode = nodesToVisit.ExtractRoot();
            
                 if (currentNode.IsVisited)
                 {
@@ -56,7 +55,7 @@ namespace Algo1.Core
                             discoveredNode.CurrentCost = currentNode.CurrentCost + node.Value;
                         }
 
-                        nodesToVisit.Add(discoveredNode);
+                        nodesToVisit.Insert(discoveredNode);
                     }
                 }
 
@@ -75,7 +74,7 @@ namespace Algo1.Core
         }
     }
 
-    public class AdjacencyItem
+    public class AdjacencyItem : IComparable<AdjacencyItem>
     {
         public AdjacencyItem()
         {
@@ -116,6 +115,19 @@ namespace Algo1.Core
             }
 
             return graphItem;
+        }
+
+        public int CompareTo(AdjacencyItem item)
+        {
+            if (item == null || this.CurrentCost > item.CurrentCost)
+            {
+                return 1;
+            } else if (CurrentCost == item.CurrentCost)
+            {
+                return 0;
+            }
+
+            return -1;
         }
     }
 }

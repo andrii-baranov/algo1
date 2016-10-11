@@ -5,21 +5,21 @@ using System.Linq;
 namespace Algo1.Core
 {
     //todo add generic implementation
-    public class Heap
+    public class Heap<T>  where T : IComparable<T>
     {
         //todo change to minMax
         private bool _isMinHeap;
 
-        private List<int> _data;
+        private List<T> _data;
 
         public Heap(bool isMinHeap)
         {
             _isMinHeap = isMinHeap;
-            _data = new List<int>();
+            _data = new List<T>();
         }
 
 
-        public void Heapify(int[] input)
+        public void Heapify(T[] input)
         {
             _data.Clear();
 
@@ -28,14 +28,14 @@ namespace Algo1.Core
                 Insert(input[i]);
             }
         }
-        public int GetTop()
+        public T GetTop()
         {
             if (_data.Any())
             {
                 return _data[0];
             }
 
-            return 0;
+            return default(T);
         }
 
         public bool HasItems()
@@ -43,7 +43,7 @@ namespace Algo1.Core
             return _data.Any();
         }
 
-        public void Insert(int item)
+        public void Insert(T item)
         {
             //todo move logic from heapify
             var lastIndex = _data.Count - 1;
@@ -67,7 +67,7 @@ namespace Algo1.Core
                     var parentIndex = GetParentIndex(newElementIndex);
 
                     // todo assuming min heap for now
-                    if (_data[parentIndex] > newElement)
+                    if (_data[parentIndex].CompareTo(newElement) == 1 )
                     {
                         // swap elements
                         var tmp = _data[parentIndex];
@@ -85,7 +85,7 @@ namespace Algo1.Core
         }
 
         //  heap-down
-        public int ExtractRoot()
+        public T ExtractRoot()
         {
             if (HasItems())
             {
@@ -107,17 +107,17 @@ namespace Algo1.Core
                 {
                     var leftChildIndex = GetLeftChildIndex(currentIndex);
                     bool leftChildExists = leftChildIndex < _data.Count;
-                    int leftChild = leftChildExists ? _data[leftChildIndex] : 0; //temp value 
+                    T leftChild = leftChildExists ? _data[leftChildIndex] : default(T); //temp value 
 
                     var rightChildIndex = GetRightChildIndex(currentIndex);
                     bool rightChildExists = rightChildIndex < _data.Count;
-                    int rightChild = rightChildExists ? _data[rightChildIndex] : 0; //temp value  
+                    T rightChild = rightChildExists ? _data[rightChildIndex] : default(T); //temp value  
 
                     if (leftChildExists && rightChildExists)
                     {
-                        if (leftChild < rightChild)
+                        if (leftChild.CompareTo(rightChild) < 0)
                         {
-                            if (_data[currentIndex] > leftChild)
+                            if (_data[currentIndex].CompareTo(leftChild) > 0)
                             {
                                 Swap(currentIndex, leftChildIndex);
 
@@ -130,7 +130,7 @@ namespace Algo1.Core
                         }
                         else
                         {
-                            if (_data[currentIndex] > rightChild)
+                            if (_data[currentIndex].CompareTo(rightChild) > 0)
                             {
                                 Swap(currentIndex, rightChildIndex);
 
@@ -144,7 +144,7 @@ namespace Algo1.Core
                     }
                     else if (leftChildExists)
                     {
-                        if (_data[currentIndex] > leftChild)
+                        if (_data[currentIndex].CompareTo(leftChild) > 0)
                         {
                             Swap(currentIndex, leftChildIndex);
 
@@ -157,7 +157,7 @@ namespace Algo1.Core
                     }
                     else if (rightChildExists)
                     {
-                        if (_data[currentIndex] > rightChild)
+                        if (_data[currentIndex].CompareTo(rightChild) > 0)
                         {
                             Swap(currentIndex, rightChildIndex);
 
@@ -204,35 +204,7 @@ namespace Algo1.Core
             return (index - 1) / 2;
         }
 
-        private int GetRightChild(int index)
-        {
-            var rightChildIndex = GetRightChildIndex(index);
-
-            if (rightChildIndex <= _data.Count)
-            {
-                return _data[rightChildIndex];
-            }
-            else
-            {
-                return default(int);
-            }
-        }
-
-        private int GetLeftChild(int index)
-        {
-            var leftChildIndex = GetLeftChildIndex(index);
-
-            if (leftChildIndex <= _data.Count)
-            {
-                return _data[leftChildIndex];
-            }
-            else
-            {
-                return default(int);
-            }
-        }
-
-        private int GetParent(int index)
+        private T GetParent(int index)
         {
             var parentIndex = GetParentIndex(index);
 
@@ -242,7 +214,7 @@ namespace Algo1.Core
             }
             else
             {
-                return default(int);
+                return default(T);
             }
         }
     }
