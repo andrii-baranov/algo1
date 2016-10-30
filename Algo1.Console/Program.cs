@@ -13,27 +13,30 @@ namespace Algo1.Console
         static void Main(string[] args)
         {
 
-            var inputLines = File.ReadAllLines(@"C:\temp\_32387ba40b36359a38625cbb397eee65_QuickSort.txt");
+            var inputLines = File.ReadAllLines(@"C:\temp\_410e934e6553ac56409b2cb7096a44aa_SCC.txt");
 
-            int[] input = new int[inputLines.Length];
+            Dictionary<int,List<int>> input = new Dictionary<int,List<int>>();
 
             for (int i = 0; i < inputLines.Length; i++)
             {
-                input[i] = int.Parse(inputLines[i]);
-            }
+                var items = inputLines[i].Trim().Split(' ');
 
-            var quickSort = new QuickSort(PivotSelectionType.Median);
+                var startVerticle = int.Parse(items[0]);
+                var endVerticle = int.Parse(items[1]);
 
-            var result = quickSort.Sort(input);
 
-            var compCount = quickSort.ComparisonsCount;
-            for (int i =0; i < result.Length; i++)
-            {
-                if (result[i] != i + 1)
+                if (!input.ContainsKey(startVerticle))
                 {
-                    System.Console.WriteLine("not match");
+                    input[startVerticle] = new List<int>();
                 }
+
+                input[startVerticle].Add(endVerticle);
             }
+
+            KosurajuSCC scc = new KosurajuSCC();
+            var result  = scc.CalucalateSCC(input);
+
+            var oderedSccs = result.OrderByDescending(i => i.Count);
 
             System.Console.ReadKey();
         }
