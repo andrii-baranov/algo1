@@ -43,8 +43,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="8Queens.cs" />
+    <Compile Include="AnimalShelter.cs" />
+    <Compile Include="BitManipulations.cs" />
+    <Compile Include="BuildOrder.cs" />
+    <Compile Include="DepthCalculator.cs" />
+    <Compile Include="HanoiTower.cs" />
     <Compile Include="KosurajuSCC.cs" />
     <Compile Include="MedianMaintenanceFinder.cs" />
+    <Compile Include="MyBinaryTree.cs" />
+    <Compile Include="OpenAddressHashTable.cs" />
+    <Compile Include="SimpleHashTable.cs" />
+    <Compile Include="Solution.cs" />
+    <Compile Include="Sorting\HeapSort.cs" />
+    <Compile Include="Sorting\QuickSelection.cs" />
+    <Compile Include="Sorting\QuickSortBasic.cs" />
+    <Compile Include="Sorting\SelectionSort.cs" />
+    <Compile Include="StackSorter.cs" />
+    <Compile Include="StringUtils.cs" />
+    <Compile Include="Trees\BST.cs" />
     <Compile Include="TwoSumFinder.cs" />
     <Compile Include="DijkstraPathSearch.cs" />
     <Compile Include="Heap.cs" />

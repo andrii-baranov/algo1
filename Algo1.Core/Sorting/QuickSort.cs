@@ -60,6 +60,37 @@ namespace Algo1.Core
                     return PartitionViaMedianPivot;
             }
         }
+
+        private int ThreeWayPivot(int[] array, int low, int high)
+        {
+            int pivotIndex = this.FindMedianPivotIndex(array, low, high);
+            int pivot = array[pivotIndex];
+            int lt = low;
+            int gt = high;
+
+            // put pivot to start
+            Swap(array, low, pivotIndex);
+
+            int i = low;
+
+            while (i <= gt)
+            {
+                if (array[i] < pivot)
+                {
+                    Swap(array, lt++, i++);
+                }
+                else if (array[i] > pivot)
+                {
+                    Swap(array, i, gt--);
+                }
+                else
+                {
+                    i++;
+                }
+            }
+
+            return lt;
+        }
         private int PartitionViaLowPivot(int[] array, int low, int high)
         {
             int pivot = array[low];

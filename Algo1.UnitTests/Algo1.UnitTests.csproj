@@ -52,13 +52,20 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="BitManipulationsTest.cs" />
+    <Compile Include="BuildOrderTests.cs" />
     <Compile Include="DijkstraSearchTests.cs" />
     <Compile Include="KosarajuSCCTests.cs" />
+    <Compile Include="LeetCodeTests.cs" />
+    <Compile Include="ListOfDepthTest.cs" />
     <Compile Include="MergeSorterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BubbleSorterTests.cs" />
     <Compile Include="QuickSortTests.cs" />
     <Compile Include="HeapTests.cs" />
+    <Compile Include="SimpleHashTableTests.cs" />
+    <Compile Include="SortingTests.cs" />
+    <Compile Include="SortStackTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Algo1.Core\Algo1.Core.csproj">
