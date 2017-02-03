@@ -50,6 +50,7 @@
     <Compile Include="DepthCalculator.cs" />
     <Compile Include="HanoiTower.cs" />
     <Compile Include="KosurajuSCC.cs" />
+    <Compile Include="LeetCode\ArrayProblems.cs" />
     <Compile Include="MedianMaintenanceFinder.cs" />
     <Compile Include="MyBinaryTree.cs" />
     <Compile Include="OpenAddressHashTable.cs" />

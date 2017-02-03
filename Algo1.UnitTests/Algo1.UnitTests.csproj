@@ -52,6 +52,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="ArrayProblemTests.cs" />
     <Compile Include="BitManipulationsTest.cs" />
     <Compile Include="BuildOrderTests.cs" />
     <Compile Include="DijkstraSearchTests.cs" />
