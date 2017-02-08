@@ -51,6 +51,7 @@
     <Compile Include="HanoiTower.cs" />
     <Compile Include="KosurajuSCC.cs" />
     <Compile Include="LeetCode\ArrayProblems.cs" />
+    <Compile Include="LeetCode\ExpressionTreeProblems.cs" />
     <Compile Include="LeetCode\ListProblems.cs" />
     <Compile Include="LeetCode\PermutationProblems.cs" />
     <Compile Include="MedianMaintenanceFinder.cs" />
