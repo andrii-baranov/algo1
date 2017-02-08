@@ -59,7 +59,9 @@
     <Compile Include="KosarajuSCCTests.cs" />
     <Compile Include="LeetCodeTests.cs" />
     <Compile Include="ListOfDepthTest.cs" />
+    <Compile Include="ListProblemTests.cs" />
     <Compile Include="MergeSorterTests.cs" />
+    <Compile Include="PermutationProblemsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BubbleSorterTests.cs" />
     <Compile Include="QuickSortTests.cs" />

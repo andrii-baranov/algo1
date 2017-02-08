@@ -106,5 +106,33 @@ namespace Algo1.Core.LeetCode
             public Interval() { start = 0; end = 0; }
             public Interval(int s, int e) { start = s; end = e; }
         }
+
+
+        // LeetCode 62. Unique Paths
+        public int UniquePaths(int m, int n)
+        {
+            int[,] map = new int[m, n];
+
+            map[0, 0] = 1;
+
+            for (int r = 0; r < m; r++)
+            {
+
+                for (int col = 0; col < n; col++)
+                {
+                    if (col > 0)
+                    {
+                        map[r, col] = map[r,col] + map[r, col - 1];
+                    }
+
+                    if (r > 0)
+                    {
+                        map[r, col] = map[r, col] + map[r - 1, col];
+                    }
+                }
+            }
+
+            return map[m - 1, n - 1];
+        }
     }
 }
