@@ -23,5 +23,27 @@ namespace Algo1.UnitTests
                 Assert.IsTrue(actualResult[i] == i + 1);
             }
         }
+
+
+        [TestMethod]
+        public void KeyIndexedCountingTest()
+        {
+            int[] numbers = new int[] {1, 2, 3, 1, 2, 3, 4, 5, 5, 1, 2, 2, 3, 4, 1, 3, 5, 8, 9, 6, 8, 4, 5, 5,};
+
+            KeyIndexedCounting counter = new KeyIndexedCounting();
+
+            var sorted = counter.Sort(numbers, 10);
+
+            Assert.AreEqual(numbers.Length, sorted.Length);
+
+
+            for (int i = 1; i < sorted.Length; i++)
+            {
+                if (sorted[i - 1] > sorted[i])
+                {
+                    Assert.Fail("not sorted");
+                }
+            }
+        }
     }
 }

@@ -60,6 +60,7 @@
     <Compile Include="SimpleHashTable.cs" />
     <Compile Include="Solution.cs" />
     <Compile Include="Sorting\HeapSort.cs" />
+    <Compile Include="Sorting\KeyIndexedCounting.cs" />
     <Compile Include="Sorting\QuickSelection.cs" />
     <Compile Include="Sorting\QuickSortBasic.cs" />
     <Compile Include="Sorting\SelectionSort.cs" />
